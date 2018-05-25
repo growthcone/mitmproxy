@@ -188,7 +188,7 @@ class ConsoleMaster(master.Master):
         if not sys.stdout.isatty():
             print("Error: mitmproxy's console interface requires a tty. "
                   "Please run mitmproxy in an interactive shell environment.", file=sys.stderr)
-            sys.exit(1)
+#            sys.exit(1)
 
         self.ui = window.Screen()
         self.ui.set_terminal_properties(256)
