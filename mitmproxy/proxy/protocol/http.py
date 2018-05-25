@@ -232,7 +232,7 @@ class HttpLayer(base.Layer):
             )
         self.channel.ask("http_connect_response", f)
         if 'X-ProxyMesh-IP' in f.response.headers:
-            f.ip = f.response.headers['X-ProxyMesh-IP']
+            f.request.ip = f.response.headers['X-ProxyMesh-IP']
         self.send_response(f.response)
         if is_ok(f.response.status_code):
             layer = UpstreamConnectLayer(self, f.request)
