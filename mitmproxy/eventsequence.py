@@ -22,6 +22,7 @@ Events = frozenset([
     "requestheaders",
     "response",
     "responseheaders",
+    "http_connect_response",
     "error",
     # WebSocket
     "websocket_handshake",
