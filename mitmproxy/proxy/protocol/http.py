@@ -386,7 +386,8 @@ class HttpLayer(base.Layer):
 
                 # call the appropriate script hook - this is an opportunity for
                 # an inline script to set f.stream = True
-                f.response.headers['X-ProxyMesh-IP'] = self.ip
+                if self.ip:
+                    f.response.headers['X-ProxyMesh-IP'] = self.ip
                 self.channel.ask("responseheaders", f)
 
                 if f.response.stream:
